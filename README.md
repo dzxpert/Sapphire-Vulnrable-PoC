@@ -2,7 +2,7 @@
 
 ## Overview
 
-This directory contains a proof-of-concept (POC) exploit for the vulnerable `amigendrv64.sys` driver (CVE-2019-18845). The driver provides unrestricted access to physical memory, I/O ports, and PCI configuration space without any authentication or authorization checks.
+This directory contains a proof-of-concept (POC) exploit for the vulnerable `amigendrv64.sys` driver by Sapphire. The driver provides unrestricted access to physical memory, I/O ports, and PCI configuration space without any authentication or authorization checks.
 
 **POC Status**: ✅ **100% Complete - All Tests Passing (10/10)**
 
@@ -33,43 +33,9 @@ This directory contains a proof-of-concept (POC) exploit for the vulnerable `ami
 
 - `genericdrv.h` - Header file with corrected IOCTL definitions and structures
 - `genericdrv_poc.c` - Main POC implementation (100% functional)
-- `process_reader.c` - Process memory reader utility
-- `build.bat` - Visual Studio build script (no CMake required)
-- `bin/genericdrv_poc.exe` - Compiled POC executable
-- `vulnerability_report.md` - Detailed security analysis
-- `README.md` - This file
-
-## Building
-
-### Quick Build (Recommended)
-
-```cmd
-build.bat
-```
-
-The build script automatically:
-1. Locates Visual Studio installation
-2. Sets up build environment
-3. Compiles the POC
-4. Outputs to `bin/genericdrv_poc.exe`
-
-### Manual Build
-
-```cmd
-"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvarsall.bat" x64
-cl.exe genericdrv_poc.c /Fe:bin\genericdrv_poc.exe
-```
 
 ## Running the POC
 
-### Prerequisites
-
-1. **Driver must be loaded**:
-   ```cmd
-   sc query genericdrv
-   ```
-
-2. **Run as Administrator** (required for device access)
 
 ### Interactive Mode (Default)
 
@@ -155,5 +121,5 @@ This POC is for **educational and research purposes only**. The vulnerabilities 
 
 ---
 
-**Last Updated**: 2026-02-01  
+**Last Updated**: 2026-02-13  
 **Status**: ✅ Fully Functional POC
